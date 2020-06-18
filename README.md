@@ -11,7 +11,7 @@
 - has_many :groups, through: :users_groups
 - has_many :chat_comments
 @ -15,33 +15,33 @@
-#### 課題 indexの設定　ChatSpaceでの検索機能必要か？　グループ機能でuser_nameのindex化必要か（コメント欄、グループ編集欄でユーザー名が検索・表示される）aaaaaa
+#### 課題 indexの設定　ChatSpaceでの検索機能必要か？　グループ機能でuser_nameのindex化必要か（コメント欄、グループ編集欄でユーザー名が検索・表示される）
 
 ## groupsテーブルh2
 |Column|Type|Option|Validation|
