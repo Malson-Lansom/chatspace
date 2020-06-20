@@ -27,8 +27,8 @@
       %div.message__contents
         %input.message__contents__text{type: "text", placeholder: "type a message"}
         %label{class: "message__contents__label"}
-          =link_to "###", class: "message__contents__label__image" do
-            =icon('far', 'image', class: "message__contents__label__image__icon")
-            %input{type: "file", class: "message__contents_label__image__file"}
+          =link_to "###", class: "message__contents__label__anchor" do
+            =icon('far', 'image', class: "message__contents__label__anchor__icon")
+            %input{type: "file", class: "message__contents__label__anchor__file"}
       %input.message__submit{type: "submit", value: "SEND"}
 
