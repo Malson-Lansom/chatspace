@@ -1,15 +1,15 @@
 %body
-  .side_bar
-    .side_header
-      %p.user_name Sano Keiichi
-      .icon_menu
-        .icon_link
-          = link_to "###" do
-            = icon('far', 'edit', class: "btn")
-        .icon_link
-          = link_to "###", class: "edit-btn" do
-            = icon('fas', 'cog', class: "btn")
-    .side_body
-      .group_chat
-        %p.group_name Group Name
-        %p.latest_comment Latest Comment "COMMENT!!"
+  .sidebar
+    .sidebar__header
+      %p.sidebar__header__username Sano Keiichi
+      .icons
+        .icons__icon
+          = link_to "###", class: "icons__icon__anchor" do
+            = icon('far', 'edit', class: "icons__icon__anchor__img")
+        .icons__icon
+          = link_to "###", class: "icons__icon__anchor" do
+            = icon('fas', 'cog', class: "icons__icon__anchor__img")
+    .sidebar__body
+      .sidebar__body__groupchat
+        %p.sidebar__body__groupchat__name Group Name
+        %p.sidebar__body__groupchat__latest_comment Latest Comment "COMMENT!!"

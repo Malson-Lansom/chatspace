@@ -1,35 +1,34 @@
 %body
-.main_chat
-  .main_header
-    .group_info
-      %p.group_name 
+.mainchat
+  .mainchat__header
+    .mainchat__header__group_info
+      %p.mainchat__header__group_info__group_name 
         Group Name
-      %ul.member_list
-        Member List
+      %ul.mainchat__header__group_info__member_list
+        Member List: 
         %li
-          aaa
+          memberA
 
-    .edit_btn
-      .btn_link
+    .mainchat__header__edit
+      .mainchat__header__edit__anchor
         = link_to "###" do 
-          %p.btn Edit
+          %p.mainchat__header__edit__anchor__btn Edit
 
-  .main_body
-    .chat_line
-      .first_line
-        %p.chatter WHOCHAT
-        %p.timestamp TIMESTAMP
-      .second_line
+  .mainchat__body
+    .mainchat__body__chatline
+      .mainchat__body__chatline__infos
+        %p.mainchat__body__chatline__infos__chatter WHOCHAT
+        %p.mainchat__body__chatline__infos__timestamp TIMESTAMP
+      .mainchat__body__chatline__message
         %p.ones_message 
-        messagemessagemessage
-  .main_footer
+        message message message message message message message message message message message message
+  .mainchat__footer
     %form.message
       %div.message__contents
         %input.message__contents__text{type: "text", placeholder: "type a message"}
-        %label {
-        =link_to "###", class: "message__contents__image" do
-          =icon('far', 'image', class: "message__contents__image__btn")
-          %input{type: "file"}
-        }
+        %label{class: "message__contents__label"}
+          =link_to "###", class: "message__contents__label__image" do
+            =icon('far', 'image', class: "message__contents__label__image__icon")
+            %input{type: "file", class: "message__contents_label__image__file"}
       %input.message__submit{type: "submit", value: "SEND"}
 
