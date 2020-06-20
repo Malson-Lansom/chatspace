@@ -1,0 +1,15 @@
+%body
+  .side_bar
+    .side_header
+      %p.user_name Sano Keiichi
+      .icon_menu
+        .icon_link
+          = link_to "###" do
+            = icon('far', 'edit', class: "btn")
+        .icon_link
+          = link_to "###", class: "edit-btn" do
+            = icon('fas', 'cog', class: "btn")
+    .side_body
+      .group_chat
+        %p.group_name Group Name
+        %p.latest_comment Latest Comment "COMMENT!!"

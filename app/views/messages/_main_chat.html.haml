@@ -1,0 +1,35 @@
+%body
+.main_chat
+  .main_header
+    .group_info
+      %p.group_name 
+        Group Name
+      %ul.member_list
+        Member List
+        %li
+          aaa
+
+    .edit_btn
+      .btn_link
+        = link_to "###" do 
+          %p.btn Edit
+
+  .main_body
+    .chat_line
+      .first_line
+        %p.chatter WHOCHAT
+        %p.timestamp TIMESTAMP
+      .second_line
+        %p.ones_message 
+        messagemessagemessage
+  .main_footer
+    %form.message
+      %div.message__contents
+        %input.message__contents__text{type: "text", placeholder: "type a message"}
+        %label {
+        =link_to "###", class: "message__contents__image" do
+          =icon('far', 'image', class: "message__contents__image__btn")
+          %input{type: "file"}
+        }
+      %input.message__submit{type: "submit", value: "SEND"}
+
