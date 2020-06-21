@@ -1,0 +1,15 @@
+%body
+  .sidebar
+    .sidebar__header
+      %p.sidebar__header__username Sano Keiichi
+      .icons
+        .icons__icon
+          = link_to "###", class: "icons__icon__anchor" do
+            = icon('far', 'edit', class: "icons__icon__anchor__img")
+        .icons__icon
+          = link_to "###", class: "icons__icon__anchor" do
+            = icon('fas', 'cog', class: "icons__icon__anchor__img")
+    .sidebar__body
+      .sidebar__body__groupchat
+        %p.sidebar__body__groupchat__name Group Name
+        %p.sidebar__body__groupchat__latest_comment Latest Comment "COMMENT!!"

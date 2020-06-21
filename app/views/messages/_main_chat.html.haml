@@ -1,0 +1,34 @@
+%body
+.mainchat
+  .mainchat__header
+    .mainchat__header__group_info
+      %p.mainchat__header__group_info__group_name 
+        Group Name
+      %ul.mainchat__header__group_info__member_list
+        Member List: 
+        %li
+          memberA
+
+    .mainchat__header__edit
+      .mainchat__header__edit__anchor
+        = link_to "###" do 
+          %p.mainchat__header__edit__anchor__btn Edit
+
+  .mainchat__body
+    .mainchat__body__chatline
+      .mainchat__body__chatline__infos
+        %p.mainchat__body__chatline__infos__chatter WHOCHAT
+        %p.mainchat__body__chatline__infos__timestamp TIMESTAMP
+      .mainchat__body__chatline__message
+        %p.ones_message 
+        message message message message message message message message message message message message
+  .mainchat__footer
+    %form.message
+      %div.message__contents
+        %input.message__contents__text{type: "text", placeholder: "type a message"}
+        %label{class: "message__contents__label"}
+          =link_to "###", class: "message__contents__label__anchor" do
+            =icon('far', 'image', class: "message__contents__label__anchor__icon")
+            %input{type: "file", class: "message__contents__label__anchor__file"}
+      %input.message__submit{type: "submit", value: "SEND"}
+
