@@ -1,3 +1,4 @@
+# README
 # ChatSpaceデータベースh1
 
 ## usersテーブルh2
@@ -10,7 +11,7 @@
 ### Association
 - has_many :groups, through: :users_groups
 - has_many :chat_comments
-@ -15,33 +15,33 @@
+#### 課題 email: emailであるかどうか、フォーマットが英字数字のみか、一意性があるか、
 #### 課題 indexの設定　ChatSpaceでの検索機能必要か？　グループ機能でuser_nameのindex化必要か（コメント欄、グループ編集欄でユーザー名が検索・表示される）
 
 ## groupsテーブルh2
@@ -33,15 +34,6 @@
 - belongs_to :users
 - belongs_to :groups
 
-## chat_commentsテーブルh2
-|Column|Type|Validation|
-|------|----|----------|
-|id|integer|null: false, unique: true|
-|comment|text|length: { minimum: 100 }|
-|image|text|url, format: URI::regexp(%w(http https))|
-|user_id|integer|foreign_key: true, dependent: delete|
-|group_id|integer|foreign_key: true, dependent: delete|
-
 ## messageテーブルh2
 |Column|Type|Option|Validation|
 |------|----|------|----------|
@@ -53,7 +45,31 @@
 ### Association
 - belongs_to :users
 - belongs_to :groups
-@ -72,4 +72,4 @@ Things you may want to cover:
+#### 課題 imageの変数タイプ　機能としてはURLではなく、画像そのものを格納する挙動になっている。タイプを検索したところphpはresourceタイプ、rubyに関しては不明、同じ？
+とりあえずURLを貼り付ける場合の対応を記述
+
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
 * Deployment instructions
 
 * ...
+
