@@ -1,4 +1,4 @@
-%body
+/* %body は不要のため削除(shingoteshima様指図)*/
 .mainchat
   .mainchat__header
     .mainchat__header__group_info
@@ -26,9 +26,8 @@
     %form.message
       %div.message__contents
         %input.message__contents__text{type: "text", placeholder: "type a message"}
-        %label{class: "message__contents__label"}
-          =link_to "###", class: "message__contents__label__anchor" do
-            =icon('far', 'image', class: "message__contents__label__anchor__icon")
-            %input{type: "file", class: "message__contents__label__anchor__file"}
+          %label{class: "message__contents__text__label"}
+            =icon('far', 'image', class: "message__contents__text__label__icon")
+            %input{type: "file", class: "message__contents__text__label__file"}
       %input.message__submit{type: "submit", value: "SEND"}
 
