@@ -2,11 +2,11 @@
 %html
   %head
     %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type" }/
-    /* hashをシンボル型に変更しました (shingoteshima様指図) */
     %title Chatspace
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render 'layouts/notifications'
     = yield
