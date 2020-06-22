@@ -10,7 +10,7 @@
 |password|string|null: false|length: { minimum: 8 }|
 ### Association
 - has_many :groups, through: :users_groups
-- has_many :chat_comments
+- has_many :chat_comments　　　
 #### 課題 email: emailであるかどうか、フォーマットが英字数字のみか、一意性があるか、
 #### 課題 indexの設定　ChatSpaceでの検索機能必要か？　グループ機能でuser_nameのindex化必要か（コメント欄、グループ編集欄でユーザー名が検索・表示される）
 
