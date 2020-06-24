@@ -10,13 +10,27 @@
       = f.label :name, "グループ名", class: 'SettingGroupForm__label'
     .SettingGroupForm__rightField
       = f.text_field :name, class: 'SettingGroupForm__input', placeholder: 'グループ名を入力してください'
+  
   .SettingGroupForm__field
     .SettingGroupForm__leftField
       %label.SettingGroupForm__label チャットメンバーを追加
     .SettingGroupForm__rightField
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+      %input.SettingGroupForm__input{:name => "search", :placeholder => "追加したいユーザー名を入力してください", :type => "text", :value => ""}/
+  
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      %label.SettingGroupForm__label チャットメンバー
+    .SettingGroupForm__rightField
+      .ChatMember
+        = f.collection_check_boxes :user_ids, User.all, :id, :name
+        / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+        / 条件式の設定：テキスト入力時にチャットメンバーがサーチできれば追加ボタンが出てくる
+        / 別の条件式：チャットメンバーが自分以外に表示されている場合、削除ボタンが出てくる
+        / .ChatMember__button 
+        / .ChatMember__add 
+        / .ChatMember__remove
+
   .SettingGroupForm__field
     .SettingGroupForm__leftField
     .SettingGroupForm__rightField

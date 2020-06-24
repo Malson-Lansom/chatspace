@@ -1,8 +1,5 @@
 class GroupsController < ApplicationController
   
-  def index
-  end
-
   def new
     # からのインスタンスを作成する
     @group = Group.new
@@ -29,7 +26,7 @@ class GroupsController < ApplicationController
   end
   
   def update
-    @group = Gropu.find(params[:id])
+    @group = Group.find(params[:id])
     # 条件式でストロングパラメータを上書きする分岐を設定
     if @group.update(group_params)
       redirect_to root_path, notice: 'グループを更新しました'

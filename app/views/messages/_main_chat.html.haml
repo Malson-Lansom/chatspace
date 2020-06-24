@@ -1,33 +1,25 @@
-/* %body は不要のため削除(shingoteshima様指図)*/
 .mainchat
   .mainchat__header
     .mainchat__header__group_info
-      %p.mainchat__header__group_info__group_name 
-        Group Name
-      %ul.mainchat__header__group_info__member_list
-        Member List: 
-        %li
-          memberA
+      .mainchat__header__group_info__group_name 
+        = @group.name
+      .mainchat__header__group_info__member_list
+        - @group.users.each do |user|
+          = user.name
 
     .mainchat__header__edit
       .mainchat__header__edit__anchor
-        = link_to "###" do 
+        = link_to edit_group_path(@group.id) do 
           %p.mainchat__header__edit__anchor__btn Edit
+          
+  .MessageField
+    = render @messages
 
-  .mainchat__body
-    .mainchat__body__chatline
-      .mainchat__body__chatline__infos
-        %p.mainchat__body__chatline__infos__chatter WHOCHAT
-        %p.mainchat__body__chatline__infos__timestamp TIMESTAMP
-      .mainchat__body__chatline__message
-        %p.ones_message 
-        message message message message message message message message message message message message
   .mainchat__footer
-    %form.message
-      %div.message__contents
-        %input.message__contents__text{type: "text", placeholder: "type a message"}
-          %label{class: "message__contents__text__label"}
-            =icon('far', 'image', class: "message__contents__text__label__icon")
-            %input{type: "file", class: "message__contents__text__label__file"}
-      %input.message__submit{type: "submit", value: "SEND"}
-
+    = form_with model: [@group, @message], html: {class: "Content"}, local: true do |f|
+      = f.text_field :content, class: 'Content__inputContent', placeholder: 'type a message'
+      .Content__inputImage
+        = f.label :image, class: 'Content__inputImage__label' do
+          = icon('far', 'image', class: 'Content__inputImage__label__icon')
+          = f.file_field :image, class: 'Content__inputImage__label__hidden'
+      = f.submit 'Send', class: 'Content__Submit'
