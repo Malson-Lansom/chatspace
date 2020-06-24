@@ -16,10 +16,18 @@
       %label.SettingGroupForm__label チャットメンバーを追加
     .SettingGroupForm__rightField
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      .SettingGroupForm__search
-        
+      %input.SettingGroupForm__input{:name => "search", :placeholder => "追加したいユーザー名を入力してください", :type => "text", :value => ""}/
+  
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      %label.SettingGroupForm__label チャットメンバー
+    .SettingGroupForm__rightField
       = f.collection_check_boxes :user_ids, User.all, :id, :name
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+
+
+
+
 
 
   .SettingGroupForm__field
