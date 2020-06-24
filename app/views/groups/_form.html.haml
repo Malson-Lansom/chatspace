@@ -22,13 +22,14 @@
     .SettingGroupForm__leftField
       %label.SettingGroupForm__label チャットメンバー
     .SettingGroupForm__rightField
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-
-
-
-
-
+      .ChatMember
+        = f.collection_check_boxes :user_ids, User.all, :id, :name
+        / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+        / 条件式の設定：テキスト入力時にチャットメンバーがサーチできれば追加ボタンが出てくる
+        / 別の条件式：チャットメンバーが自分以外に表示されている場合、削除ボタンが出てくる
+        / .ChatMember__button 
+        / .ChatMember__add 
+        / .ChatMember__remove
 
   .SettingGroupForm__field
     .SettingGroupForm__leftField
