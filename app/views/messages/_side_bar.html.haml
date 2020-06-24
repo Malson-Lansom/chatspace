@@ -5,7 +5,7 @@
         = current_user.name
       .icons
         .icons__icon
-          = link_to "###", class: "icons__icon__anchor" do
+          = link_to new_group_path, class: "icons__icon__anchor" do
             = icon('far', 'edit', class: "icons__icon__anchor__img")
         .icons__icon
           = link_to edit_user_path(current_user), class: "icons__icon__anchor" do
