@@ -46,12 +46,12 @@
       padding: 0 20px;
       .Group {
         height: 65px;
+        padding: 20px 0 5px;
         &__anchor {
           text-decoration: none;
-          color: white
+          color: white;
           &anchor__name {
             font-size: 15px;
-            padding: 20px 0 5px;
           }
           &anchor__message {
             font-size: 11px;

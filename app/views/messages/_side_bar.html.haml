@@ -12,8 +12,9 @@
             = icon('fas', 'cog', class: "icons__icon__anchor__img")
     .sidebar__body
       - current_user.groups.each do |group|
-      .Group
-        = link_to '#', class: "Group__anchor" do
-          .Group__anchor__name
-            = group.name
-          .Group__anchor__message
+        .Group
+          = link_to '#', class: "Group__anchor" do
+            .Group__anchor__name
+              = group.name
+            .Group__anchor__message
+              *****

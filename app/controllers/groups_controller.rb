@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
   end
 
   private
-  def gropu_params
+  def group_params
     # 配列に対して保存を許可したい場合は、キーの名称と関連づけてバリューに[]と記述するルール
     params.require(:group).permit(:name, user_ids: [])
   end
