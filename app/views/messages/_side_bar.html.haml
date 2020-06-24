@@ -11,6 +11,9 @@
           = link_to edit_user_path(current_user), class: "icons__icon__anchor" do
             = icon('fas', 'cog', class: "icons__icon__anchor__img")
     .sidebar__body
-      .sidebar__body__groupchat
-        %p.sidebar__body__groupchat__name Group Name
-        %p.sidebar__body__groupchat__latest_comment Latest Comment "COMMENT!!"
+      - current_user.groups.each do |group|
+      .Group
+        = link_to '#', class: "Group__anchor" do
+          .Group__anchor__name
+            = group.name
+          .Group__anchor__message

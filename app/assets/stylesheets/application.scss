@@ -4,6 +4,7 @@
 @import "font-awesome";
 @import "modules/user";
 @import "modules/flash";
+@import "modules/group";
 
 .wrapper {
   display: flex;
@@ -43,15 +44,18 @@
       display: flex;
       flex-direction: column;
       padding: 0 20px;
-      &__groupchat {
-        color: #ffffff;
+      .Group {
         height: 65px;
-        &__name {
-          font-size: 15px;
-          padding: 20px 0 5px;
-        }
-        &__latest_comment {
-          font-size: 11px;
+        &__anchor {
+          text-decoration: none;
+          color: white
+          &anchor__name {
+            font-size: 15px;
+            padding: 20px 0 5px;
+          }
+          &anchor__message {
+            font-size: 11px;
+          }
         }
       }
     }
