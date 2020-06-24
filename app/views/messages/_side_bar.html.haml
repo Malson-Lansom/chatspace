@@ -13,8 +13,8 @@
     .sidebar__body
       - current_user.groups.each do |group|
         .Group
-          = link_to '#', class: "Group__anchor" do
+          = link_to group_messages_path(group), class: "Group__anchor" do
             .Group__anchor__name
               = group.name
             .Group__anchor__message
-              *****
+              = group.show_last_message

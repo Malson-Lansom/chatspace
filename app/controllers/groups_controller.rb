@@ -1,8 +1,5 @@
 class GroupsController < ApplicationController
   
-  def index
-  end
-
   def new
     # からのインスタンスを作成する
     @group = Group.new
