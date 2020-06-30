@@ -31,6 +31,17 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # 実行中の処理を途中で止めることができる
+  gem 'pry-rails'
+  # テスト環境を記述することができる
+  # bundle install -> rails g rspec:install 4fileが生成 
+  # 出力結果をドキュメント風に生成し見やすくする記述を追加する --format documentation(.rspec)
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'rails-controller-testing'
+  # 
+  gem 'factory_bot_rails'
+  # created_listで複数の一致しないダミーデータを作成できる
+  gem 'faker'
 end
 
 group :development do
@@ -52,10 +63,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+# hamlを使用するための
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
+# sassを使用するための
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'pry-rails'
+# 画像をアップロードして、表示させる
 gem 'carrierwave'
+# 画像ファイルをリサイズできる、carrierwaveのuploaderクラスでリサイズの設定
 gem 'mini_magick'
+# jqueryの準備をする
+gem 'jquery-rails'

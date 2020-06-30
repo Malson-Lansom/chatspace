@@ -10,13 +10,15 @@ class MessagesController < ApplicationController
   def create
     # メッセージを新しく作って指定カラムに格納する条件式を考える
     @message = @group.messages.new(message_params)
-    if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージを投稿しました'
-    else
-      @messages = @group.messages.includes(:user)
-      flash.now[:alert] = 'メッセージを入力してください'
-      render :index
-    end
+    
+    # 非同期通信の指定のため削除し、messages.jsに記述する
+    # if @message.save
+    #   redirect_to group_messages_path(@group), notice: 'メッセージを投稿しました'
+    # else
+    #   @messages = @group.messages.includes(:user)
+    #   flash.now[:alert] = 'メッセージを入力してください'
+    #   render :index
+    # end
   end
 
   private
