@@ -3,18 +3,18 @@ $(function(){
     let html = `<div class="MessageBox">
                   <div class="MessageInfo">
                     <div class="MessageInfo__userName">
-                      ${userJSN}
+                      ${message.userJSN}
                     </div>
                     <div class="MessageInfo__date">
-                      ${timeJSN}
+                      ${message.timeJSN}
                     </div>
                   </div>
                   <div class="Message">
                     <p class="Message__content">
-                      ${contentJSN}
+                      ${message.contentJSN}
                     </p>
                   </div>
-                  ${imageJSN}
+                  ${message.imageJSN}
                 </div>`
     return html
   }
