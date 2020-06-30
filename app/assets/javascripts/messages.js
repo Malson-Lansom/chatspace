@@ -17,17 +17,6 @@ $(function(){
                   ${imageJSN}
                 </div>`
     return html
-    // hamlで書くのは不可???
-    // let html = `.MessageBox
-    //               .MessageInfo
-    //                 .MessageInfo__userName
-    //                   ${message.user.name}
-    //                 .MessageInfo__date
-    //                   ${message.created_at}
-    //               .Message
-    //                 - if message.content.present?
-    //                   %p.Message__content
-    //                     ${message.content}`
   }
 
   $('.Content').on('submit', function(e){
@@ -43,12 +32,9 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      //console.log(post)
       let html = buildMessages(message)
-      //console.log(html)
       $('.MessageField').append(html)
       $('.Content__inputContent').val('')
-      //console.log("success!!!")
     })
     .fail(function(){
       alert("エラーです")
