@@ -1,5 +1,11 @@
 $(function(){
-  function buildMessages(message){ 
+  function buildMessages(message){
+    var attachedImage = ""
+    if (message.image !== null) {
+      attachedImage = `<div class="MessageBox>
+                        ${message.imageJSN}
+                      </div>`
+    }
     let html = `<div class="MessageBox">
                   <div class="MessageInfo">
                     <div class="MessageInfo__userName">
@@ -14,7 +20,7 @@ $(function(){
                       ${message.contentJSN}
                     </p>
                   </div>
-                  ${message.imageJSN}
+                  ${attachedImage}
                 </div>`
     return html
   }
