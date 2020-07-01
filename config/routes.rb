@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'groups#index'
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :index]
   
   # グループとメッセージの関係性から、合わせて呼び出す作りにする
   # メッセージを呼び出すのはグループの中だけなので
