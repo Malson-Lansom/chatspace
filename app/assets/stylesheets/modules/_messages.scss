@@ -99,11 +99,12 @@
       }
     }
     .MessageField {
+      overflow: scroll;
       background-color: #fafafa;
       height: calc(100vh - 190px);
       padding: 0 40px;
       .MessageBox {
-        height: 80px;
+        // height: 80px;
         margin-bottom: 46px;
         .MessageInfo {
           padding-top: 40px;
@@ -119,7 +120,7 @@
           }
         }
         .Message {
-          height: 14px;
+          // height: 14px;
           font-size: 14px;
           padding-top: 12px;
           color: #434a54;
@@ -127,7 +128,7 @@
 
           }
           &__image {
-
+            width: 40vw;
           }
         }
       }
