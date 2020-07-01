@@ -52,10 +52,8 @@ $(function(){
     .done(function(message){
       let html = buildMessages(message)
       $('.MessageField').append(html)
-      // $('.Content__inputContent').val('')
       $('form')[0].reset();
       $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
-      //投稿が実行された後、ボタンが非活性になる状態を取り除く？
       $('.Content__Submit').prop("disabled", false);
     })
     .fail(function(){
