@@ -80,6 +80,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 # jqueryの準備をする
 gem 'jquery-rails'
+# 外部のストレージを選択しアップロードするのを補助
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
