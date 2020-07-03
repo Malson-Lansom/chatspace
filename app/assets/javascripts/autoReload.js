@@ -1,6 +1,6 @@
 $(function() {
 
-  setInterval(reloadMessages, 7000);
+
 
   function buildMessages(message){
     if ( message.image ) {
@@ -69,4 +69,5 @@ $(function() {
     });
   };
 
+  setInterval(reloadMessages, 7000);
 });
