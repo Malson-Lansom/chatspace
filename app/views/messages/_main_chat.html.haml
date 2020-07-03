@@ -4,6 +4,7 @@
       .mainchat__header__group_info__group_name 
         = @group.name
       .mainchat__header__group_info__member_list
+        Member:
         - @group.users.each do |user|
           = user.name
 
