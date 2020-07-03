@@ -44,7 +44,8 @@ $(function() {
   }
 
   let reloadMessages = function() {
-    let last_message_id = $('.MessageBox:last').data("message-id");
+    let last_message_id = $('.MessageBox:last').data("message-id") || 0;
+    console.log(last_message_id);
     $.ajax({
       //リクエストしたいのは/groups/id番号/api/messages
       url: "api/messages",

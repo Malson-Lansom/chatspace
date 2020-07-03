@@ -7,7 +7,7 @@ $(function() {
                   <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>
                 `;
-    $("#UserSearchResult").append(html);
+      $("#UserSearchResult").append(html);
   }
 
   function addNoUser() {
@@ -61,6 +61,7 @@ $(function() {
     $(this).parent().remove();
     addMember(userName, userId);
   });
+
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();
   });
