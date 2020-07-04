@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
   def edit
     # から、該当IDを持つグループを探しインスタンスとする
-    # @group = Group.find(params[:id])
+    #　@group = Group.find(params[:id])
   end
   
   def update
