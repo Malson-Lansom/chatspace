@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     # 条件式でストロングパラメータを上書きする分岐を設定
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      redirect_to group_messages_path(@group), notice: 'グループを更新しました'
     else
       render :edit
     end
