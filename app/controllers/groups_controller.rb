@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit, :update]
+  
   
   def new
     # からのインスタンスを作成する
@@ -22,11 +24,11 @@ class GroupsController < ApplicationController
 
   def edit
     # から、該当IDを持つグループを探しインスタンスとする
-    @group = Group.find(params[:id])
+    # @group = Group.find(params[:id])
   end
   
   def update
-    @group = Group.find(params[:id])
+    # @group = Group.find(params[:id])
     # 条件式でストロングパラメータを上書きする分岐を設定
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループを更新しました'
@@ -39,5 +41,8 @@ class GroupsController < ApplicationController
   def group_params
     # 配列に対して保存を許可したい場合は、キーの名称と関連づけてバリューに[]と記述するルール
     params.require(:group).permit(:name, user_ids: [])
+  end
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

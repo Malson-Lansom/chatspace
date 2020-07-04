@@ -1,6 +1,17 @@
 $(function() {
 
+  function belongsToGroup() {
+    var user_list = [];
+    $(".ChatMembers").children(".ChatMember").each(
+      function(){
+        user_list.push($(this).children("input").val())
+      }
+    )
+    return user_list;
+  }
+
   function addUser(user) {
+
     let html = `
                 <div class="ChatMember clearfix">
                   <p class="ChatMember__name">${user.name}</p>
@@ -31,6 +42,7 @@ $(function() {
   }
 
   $("#UserSearch__field").on("keyup", function() {
+    var user_list = belongsToGroup();
     let input = $("#UserSearch__field").val();
     $.ajax({
       type: 'GET',
@@ -40,9 +52,11 @@ $(function() {
     })
     .done(function(users) {
       $("#UserSearchResult").empty();
-      if (users.length !== 0) {
+      if (users.length !== 0)  {
         users.forEach(function(user){
-          addUser(user);
+          if (!user_list.includes((user.id).toString())) {
+            addUser(user);
+          }
         });
       }else if (input.length == 0) {
         return false;
