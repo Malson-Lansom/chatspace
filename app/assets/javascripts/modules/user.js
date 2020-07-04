@@ -57,9 +57,6 @@ $(function() {
           if (!user_list.includes((user.id).toString())) {
             addUser(user);
           }
-          console.log(!user_list.includes(user.id))
-          console.log((user.id).toString())
-          console.log(user_list)
         });
       }else if (input.length == 0) {
         return false;
